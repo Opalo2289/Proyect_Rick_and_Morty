@@ -13,7 +13,8 @@ import { AppComponent } from './app.component';
 import { routing } from './app.routing';
 import { HomeComponent } from './components/home/home.component';
 import { FormsModule } from '@angular/forms';
-import { FooterComponent } from './components/footer/footer.component'; 
+import { FooterComponent } from './components/footer/footer.component';
+import { BodyComponent } from './components/body/body.component'; 
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import { FooterComponent } from './components/footer/footer.component';
     AppComponent,
     HomeComponent,
     FooterComponent,
+    BodyComponent,
   ],
   imports: [
     BrowserModule,
