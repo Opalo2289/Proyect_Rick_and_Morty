@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
+declare var iziToast: any
 
 
 @Component({
@@ -20,6 +21,10 @@ export class HomeComponent implements OnInit{
 
   public selectNames: any = []
   public selectStatus: any = []
+  public load_data: any = true;
+
+  public filterSize: any = [5, 10, 15, 20]
+  public openSize: any = 20
 
   constructor(private _apiService: ApiService) {}
 
@@ -63,10 +68,23 @@ export class HomeComponent implements OnInit{
         this.data = response.results;
         console.log(this.data, this.count)
         this.getSelectParams()
+        setTimeout(() => {
+          this.load_data = false
+        },3000)
+        
       },
       error => {
+        iziToast.show({
+          title: 'ERROR',
+          titleColor: '#812',
+          color: 'red',
+          class: 'test-danger',
+          position: 'topRight',
+          message: 'NO SE ENCONTRARON COINCIDENCIAS',
+          messageSize: 'large'
+        });
         console.log(error.error.error)
-        alert(error.error.error)
+        // alert(error.error.error)
       }
     );
   }
@@ -74,6 +92,14 @@ export class HomeComponent implements OnInit{
   deleteFilter() {
     this.filters = {name: '', status: ''}
     this.completeData()
+  }
+
+  openSizeEvent(size: any) {
+    
+    this.openSize = size.target.value
+    this.completeData()
+    console.log(size.target.value)
+    
   }
 
   

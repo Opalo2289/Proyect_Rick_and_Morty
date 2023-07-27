@@ -160,47 +160,56 @@
         <div class="container text-center proyectos-contenedor">
             <div class="row">
                 <!-- Filtrar por nombre -->
+                <ng-container>
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <select class="form-select" aria-label="Default select example"  [(ngModel)]="filters.name">
+                            <option value="">-- Filtrar por Nombre --</option>
+                            <option *ngFor="let item of selectNames" [value]="item">{{ item }}</option>
+                        </select>
+                    </div>
+                    <!-- Filtrar por estado -->
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <select class="form-select" aria-label="Default select example"   [(ngModel)]="filters.status">
+                            <option value="">-- Filtrar por Estado --</option>
+                            <option *ngFor="let item of selectStatus" [value]="item">{{ item }}</option>
+                        </select>
+                    </div>
+
+                    <div class="col-12 col-md-6 col-lg-4">
+                        <select class="form-select" aria-label="Default select example"   [(ngModel)]="openSize" (change)="openSizeEvent($event)">
+                            <option value="">-- Filtrar por cantidad --</option>
+                            <option *ngFor="let item of filterSize" [value]="item">{{ item }}</option>
+                        </select>
+                    </div>
+                </ng-container>
                 
-                <div class="col-12 col-md-6 col-lg-4">
-                    <select [(ngModel)]="filters.name">
-                    <option value="">-- Filtrar por Nombre --</option>
-                    <!-- Agrega las opciones según los valores posibles -->
-                    <option *ngFor="let item of selectNames" [value]="item">{{ item }}</option>
-                    </select>
-                </div>
-            
-                <!-- Filtrar por estado -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <select [(ngModel)]="filters.status">
-                    <option value="">-- Filtrar por Estado --</option>
-                    <!-- Agrega las opciones según los valores posibles -->
-                    <option *ngFor="let item of selectStatus" [value]="item">{{ item }}</option>
-                    </select>
-                </div>
                 <div class="col-md-12 mt-2">
-                    <button (click)="applyFilter()">Aplicar Filtro</button>
-                    <button (click)="deleteFilter()">Borrar filtro</button>
+                    <button type="button" class="btn btn-primary" (click)="applyFilter()">Aplicar Filtro</button>
+                    <button type="button" class="btn btn-dark m-2" (click)="deleteFilter()">Borrar filtro</button>
                   </div>
                 <!-- proyecto 1 -->
-                <div class="col-12 col-md-6 col-lg-4" *ngFor="let item of data | paginate:{itemsPerPage: 20, currentPage:page, totalItems:count}">
-                    <div class="proyecto">
-                        <img src="{{item.image}}" alt="proyecto2">
-                        <div class="overlay">
-                            <p>{{item.name}},</p>
-                            <p>{{item.species}},</p>
-                            <p>{{item.status}}</p>
-                            <!-- <div class="iconos-contenedor">
-                                <a href="https://www.youtube.com/watch?v=mhC3Ea7ATAk" target="_blank"
-                                    rel="noopener noreferrer">
-                                    <i class="bi bi-youtube"></i>
-                                </a>
-                                <a href="https://es.wikipedia.org/wiki/Rick_S%C3%A1nchez_(Rick_y_Morty)">
-                                    <i class="bi bi-wikipedia"></i>
-                                </a>
-                            </div> -->
+                <ng-container *ngIf="load_data">
+                    <div>
+                        <div class="spinner-grow" style="width: 3rem; height: 3rem;" role="status">
+                            <span class="visually-hidden">Loading...</span>
                         </div>
                     </div>
-                </div>
+                </ng-container>
+                <ng-container *ngIf="!load_data">
+                    <div  class="col-12 col-md-6 col-lg-4" *ngFor="let item of data | paginate:{itemsPerPage: 20, currentPage:page, totalItems:count}">
+                        <div class="proyecto">
+                            <img src="{{item.image}}" alt="proyecto2">
+                            <div class="overlay">
+                                <p>{{item.name}},</p>
+                                <p>{{item.species}},</p>
+                                <p>{{item.status}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </ng-container>
+                    
+                
+               
                 <pagination-controls (pageChange)="completeData($event)"></pagination-controls>
             </div>
         </div>
