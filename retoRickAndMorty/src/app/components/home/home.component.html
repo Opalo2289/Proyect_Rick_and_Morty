@@ -159,8 +159,30 @@
         <!--Galeria de proyectos-->
         <div class="container text-center proyectos-contenedor">
             <div class="row">
+                <!-- Filtrar por nombre -->
+                
+                <div class="col-12 col-md-6 col-lg-4">
+                    <select [(ngModel)]="filters.name">
+                    <option value="">-- Filtrar por Nombre --</option>
+                    <!-- Agrega las opciones según los valores posibles -->
+                    <option *ngFor="let item of selectNames" [value]="item">{{ item }}</option>
+                    </select>
+                </div>
+            
+                <!-- Filtrar por estado -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <select [(ngModel)]="filters.status">
+                    <option value="">-- Filtrar por Estado --</option>
+                    <!-- Agrega las opciones según los valores posibles -->
+                    <option *ngFor="let item of selectStatus" [value]="item">{{ item }}</option>
+                    </select>
+                </div>
+                <div class="col-md-12 mt-2">
+                    <button (click)="applyFilter()">Aplicar Filtro</button>
+                    <button (click)="deleteFilter()">Borrar filtro</button>
+                  </div>
                 <!-- proyecto 1 -->
-                <div class="col-12 col-md-6 col-lg-4" *ngFor="let item of data | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize; let indice = index">
+                <div class="col-12 col-md-6 col-lg-4" *ngFor="let item of data | paginate:{itemsPerPage: 20, currentPage:page, totalItems:count}">
                     <div class="proyecto">
                         <img src="{{item.image}}" alt="proyecto2">
                         <div class="overlay">
@@ -179,7 +201,7 @@
                         </div>
                     </div>
                 </div>
-                
+                <pagination-controls (pageChange)="completeData($event)"></pagination-controls>
             </div>
         </div>
         <a href="https://rickymortylatino.online/" target="_blank" rel="noopener noreferrer">
