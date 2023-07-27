@@ -58,7 +58,8 @@ export class HomeComponent implements OnInit{
   public load_data: any = true;
 
   public filterSize: any = [5, 10, 15, 20]
-  public openSize: any = 20
+  // public openSize: any = 20
+  public selectedPageSize = 20;
 
   constructor(private _apiService: ApiService) {}
 
@@ -92,15 +93,12 @@ export class HomeComponent implements OnInit{
 
   completeData(page: any = 1) {
     this.page = page;
-    // this.filters.name = "rick"
-    // this.filters.status = "alive"
-    console.log(page)
+    // console.log(page)
     this._apiService.getData(page, this.filters).subscribe(
       response => {
         console.log(this.page)
         this.count = response.info.count
         this.data = response.results;
-        console.log(this.data, this.count)
         this.getSelectParams()
         setTimeout(() => {
           this.load_data = false
@@ -118,25 +116,21 @@ export class HomeComponent implements OnInit{
           messageSize: 'large'
         });
         console.log(error.error.error)
-        // alert(error.error.error)
       }
     );
-  }
+  };
+
+  
 
   deleteFilter() {
     this.filters = {name: '', status: ''}
     this.completeData()
   }
 
-  openSizeEvent(size: any) {
-    
-    this.openSize = size.target.value
-    this.completeData()
-    console.log(size.target.value)
-    
+  pageSizeEvent(event: any) {
+    this.selectedPageSize = event.target.value
+    this.completeData(); // Vuelve a cargar los datos con el nuevo tamaño de página seleccionado
   }
-
-  
 
 
 }

@@ -82,6 +82,7 @@
                             <span class="badge text-bg-primary" [routerLink]="['/gym_page/compras']">Saber más</span>
                         </div>
                     </div>
+                    
                     <!--Estudiante-->
                     <div class="columna col-12 col-md-4">
                         <img width="100" height="100" src="https://img.icons8.com/plasticine/100/rick-sanchez.png"
@@ -97,15 +98,6 @@
                                 más</span>
                         </div>
                     </div>
-                    <!-- <div class="columna col-12 col-md-4">
-                    <img src="https://img.icons8.com/nolan/64/shopping-cart-with-money.png"/>
-                    <h4 class="experiencia-titulo">Shopping</h4>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean viverra, quam ac porttitor
-                        mollis, nibh arcu mollis turpis, et lacinia dui justo at risus.</p>
-                    <div class="badges-contenedor ">
-                        <span class="badge text-bg-primary">Saber más</span>
-                    </div>
-                </div> -->
                 </div>
             </div>
         </div>
@@ -143,11 +135,13 @@
                     </div>
 
                     <div class="col-12 col-md-6 col-lg-4">
-                        <select class="form-select" aria-label="Default select example"   [(ngModel)]="openSize" (change)="openSizeEvent($event)">
-                            <option value="">-- Filtrar por cantidad --</option>
-                            <option *ngFor="let item of filterSize" [value]="item">{{ item }}</option>
+                        <select class="form-select" aria-label="Default select example" [(ngModel)]="selectedPageSize" (change)="pageSizeEvent($event)">
+                          <option value="">-- Filtrar por cantidad --</option>
+                          <option *ngFor="let item of filterSize" [value]="item">{{ item }}</option>
                         </select>
                     </div>
+                      
+                      
                 </ng-container>
                 
                 <div class="col-md-12 mt-2">
@@ -163,17 +157,18 @@
                     </div>
                 </ng-container>
                 <ng-container *ngIf="!load_data">
-                    <div  class="col-12 col-md-6 col-lg-4" *ngFor="let item of data | paginate:{itemsPerPage: 20, currentPage:page, totalItems:count}">
-                        <div class="proyecto">
-                            <img src="{{item.image}}" alt="proyecto2">
-                            <div class="overlay">
-                                <p>{{item.name}},</p>
-                                <p>{{item.species}},</p>
-                                <p>{{item.status}}</p>
-                            </div>
+                    <div class="col-12 col-md-6 col-lg-4" *ngFor="let item of data | paginate:{ itemsPerPage: selectedPageSize, currentPage: page, totalItems: count }">
+                      <div class="proyecto">
+                        <img src="{{item.image}}" alt="proyecto2">
+                        <div class="overlay">
+                          <p>{{item.name}},</p>
+                          <p>{{item.species}},</p>
+                          <p>{{item.status}}</p>
                         </div>
+                      </div>
                     </div>
-                </ng-container>
+                  </ng-container>
+                  
                 <pagination-controls (pageChange)="completeData($event)"></pagination-controls>
             </div>
         </div>
