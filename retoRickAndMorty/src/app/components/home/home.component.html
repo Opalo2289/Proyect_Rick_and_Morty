@@ -1,0 +1,341 @@
+<!-- seccion hero head -->
+<section class="hero align-items-stretch">
+    <nav class="navbar navbar-expand-md navbar-ligth">
+        <div class="container-fluid">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-toggler"
+                aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbar-toggler">
+                <a class="navbar-brand" href="">
+                    <!--<img src="imagenes/pngtree-fuego-png-png-image_6502195.jpg" width="50" alt="logo de fuego de la pagina">-->
+                </a>
+                <ul class="navbar-nav d-flex justify-content-center align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#sobre-mi">Sobre mí</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#proyectos">Proyectos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#testimonios">Testimonios</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contactos">Contacto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contactos" [routerLink]="['/gym_page/add']">Registro de usuarios</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- seccion hero -->
+    <!-- <div class="hero-principal d-flex flex-column justify-content-center align-items-center">
+            <img class="hero-imagen-desarrollador" src="imagenes/2210184.png" alt="foto de Guedys Angola">
+            <h1>Hola, soy Guedys Angola</h1>
+            <h2>Desarrollo sitios web</h2>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis fugiat, ad cupiditate voluptate consequatur quo maiores illo voluptatum qui maxime at sit, eveniet velit in! Eum soluta hic praesentium amet.</p>
+            <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum voluptatem nulla itaque. Ab ducimus natus eveniet officiis enim explicabo beatae. Dicta in eaque dolorum deleniti facere, inventore enim eos temporibus?</h2>
+            <div class="hero-inferior">
+                <img class="hero-inferior-imagen img-fluid"
+                    src="imagenes/ilustracion-concepto-abstracto-desarrollo-micrositio-desarrollo-web-micrositio-pequeno-sitio-internet-servicio-diseno-grafico-landing-page-equipo-programacion-software_.webp"
+                    alt="imagen html, css, JavaScript, persona en un pc">
+            </div>
+        </div>
+    </section> -->
+    <div id="testimonios-carrusel" class="carousel carousel-dark slide">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="container">
+                    <p class="testimonio-texto">Sé bueno Morty. Sé mejor que yo.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="container">
+                    <p class="testimonio-texto">CREE EN TI</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="container">
+                    <p class="testimonio-texto">SUPERATE</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#testimonios-carrusel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#testimonios-carrusel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</section>
+
+<section class="entero">
+
+
+    <!--Seccion de experiencia-->
+    <section>
+        <div id="experiencia" class="experiencia seccion-clara">
+            <div class="container text-center">
+                <div class="eleccion col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div>
+                        <h1>¿Y qué si él es el diablo,<span>RICK</span> ? </h1>
+                        <h5>Si te matan en el sueño de alguien, <span>mueres de verdad.</span></h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <!--Desarrollo web-->
+                    <div class="columna col-12 col-md-4">
+                        <img width="100" height="100" src="https://img.icons8.com/plasticine/100/morty-smith.png"
+                            alt="morty-smith" />
+                        <h4 class="experiencia-titulo">Qué es Rick y Morty</h4>
+                        <p>Rick y Morty (en inglés: Rick and Morty) es una serie de televisión estadounidense de
+                            animación para adultos creada por Justin Roiland y Dan Harmon en 2013 para Adult Swim,
+                            también se emitió en Cartoon Network. La serie sigue las desventuras de un científico, Rick
+                            Sanchez, y su fácilmente influenciable nieto, Morty, quienes pasan el tiempo entre la vida
+                            doméstica y los viajes espaciales, temporales e intergalácticos.</p>
+                        <div class="badges-contenedor ">
+                            <span class="badge text-bg-primary">Saber más</span>
+                        </div>
+                    </div>
+                    <!--Articulos-->
+                    <div class="columna col-12 col-md-4">
+                        <img width="100" height="100" src="https://img.icons8.com/plasticine/100/beth-smith.png"
+                            alt="beth-smith" />
+                        <h4 class="experiencia-titulo">Filosofia</h4>
+                        <p>Existe una discusión concerniente a los espectadores acerca de la filosofía en Rick y Morty.
+                            La mayoría de veces la serie adopta una perspectiva existencialista, mientras Harmon
+                            describe a Rick como un anarquista que no acepta que le digan lo que debe hacer.​ Otras
+                            filosofías se materializan a través de diferentes personajes. A través de Jerry se muestra
+                            la pasividad trágica de un ser humano patético pero cómico.</p>
+                        <div class="badges-contenedor ">
+                            <span class="badge text-bg-primary" [routerLink]="['/gym_page/compras']">Saber más</span>
+                        </div>
+                    </div>
+                    <!--Estudiante-->
+                    <div class="columna col-12 col-md-4">
+                        <img width="100" height="100" src="https://img.icons8.com/plasticine/100/rick-sanchez.png"
+                            alt="rick-sanchez" />
+                        <h4 class="experiencia-titulo">Critica</h4>
+                        <p>Rick y Morty ha recibido aclamación por parte de la crítica general, con una calificación de
+                            aprobación del 97% en el sitio web especializado Rotten Tomatoes.27​ Además, en el sitio web
+                            Metacritic la primera temporada tiene una puntuación de 85 sobre 100.28​ David Weigan, del
+                            San Francisco Chronicle, describe la serie como “poco convencional y ocasionalmente cruda…
+                            lo que la hace funcionar”</p>
+                        <div class="badges-contenedor ">
+                            <span class="badge text-bg-primary" [routerLink]="['/gym_page/entrenamiento']">Saber
+                                más</span>
+                        </div>
+                    </div>
+                    <!-- <div class="columna col-12 col-md-4">
+                    <img src="https://img.icons8.com/nolan/64/shopping-cart-with-money.png"/>
+                    <h4 class="experiencia-titulo">Shopping</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean viverra, quam ac porttitor
+                        mollis, nibh arcu mollis turpis, et lacinia dui justo at risus.</p>
+                    <div class="badges-contenedor ">
+                        <span class="badge text-bg-primary">Saber más</span>
+                    </div>
+                </div> -->
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- video -->
+    <section class="video-youtube">
+        <div class="container-fluid">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/jerFRSQW9g8"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+        </div>
+    </section>
+    <!-- proyectos -->
+    <section id="proyectos" class="proyectos-recientes seccion-clara d-flex flex-column body-transparente">
+        <h1 class="seccion-titulo texto-negro">PERSONAJES MAS IMPORTANTES</h1>
+        <h3 class="seccion-descripcion">Estos son algunos los personajes mas atractivos de la trama</h3>
+        <!--Galeria de proyectos-->
+        <div class="container text-center proyectos-contenedor">
+            <div class="row">
+                <!-- proyecto 1 -->
+                <div class="col-12 col-md-6 col-lg-4" *ngFor="let item of data | slice: (page-1) * pageSize : (page-1) * pageSize + pageSize; let indice = index">
+                    <div class="proyecto">
+                        <img src="{{item.image}}" alt="proyecto2">
+                        <div class="overlay">
+                            <p>{{item.name}},</p>
+                            <p>{{item.species}},</p>
+                            <p>{{item.status}}</p>
+                            <!-- <div class="iconos-contenedor">
+                                <a href="https://www.youtube.com/watch?v=mhC3Ea7ATAk" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <i class="bi bi-youtube"></i>
+                                </a>
+                                <a href="https://es.wikipedia.org/wiki/Rick_S%C3%A1nchez_(Rick_y_Morty)">
+                                    <i class="bi bi-wikipedia"></i>
+                                </a>
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <a href="https://rickymortylatino.online/" target="_blank" rel="noopener noreferrer">
+            <button class="btn btn-info button">
+                Ver episodios completos
+                <i class="bi bi-arrow-right-circle-fill"></i>
+            </button>
+        </a>
+    </section>
+
+    <!-- articulos -->
+    <section id="articulos" class="articulos justify-content-lg-start">
+        <h2>Articulos</h2>
+        <div class="card">
+            <div class="card-header">
+                Mas recientes
+            </div>
+            <ul class="list-group list-group-flush">
+                <a href="https://elpais.com/television/2021-07-08/rick-y-morty-demuestra-que-la-ciencia-ficcion-no-tiene-que-tomarse-en-serio-para-valer-la-pena.html"
+                    target="_blank" rel="noopener noreferrer">
+                    <li class="list-group-item">‘Rick y Morty’ demuestra que la ciencia ficción no tiene que tomarse en
+                        serio para valer la pena</li>
+                </a>
+                <a href="https://www.univision.com/entretenimiento/cultura-pop/un-articulo-cientifico-sobre-rick-and-morty-dejo-en-evidencia-a-revistas-academicas-fraudulentas"
+                    target="_blank" rel="noopener noreferrer">
+                    <li class="list-group-item">Un artículo «científico» sobre Rick and Morty dejó en evidencia a
+                        revistas académicas fraudulentas</li>
+                </a>
+                <a href="https://www.b2sport.es/noticias/elementos-para-tener-un-gimnasio-en-casa/" target="_blank"
+                    rel="noopener noreferrer">
+                    <li class="list-group-item">Qué elementos usar para entrenar y que tus rutinas sean espectaculares
+                    </li>
+                </a>
+                <a href="https://www.esquire.com/es/salud-fitness-running/a13546346/a-que-hora-es-mejor-ir-al-gimnasio-cuantas-veces-a-la-semana/"
+                    target="_blank" rel="noopener noreferrer">
+                    <li class="list-group-item">Cual horario es mejor para entrenar y no dormirte en el intento,
+                        descubre la mejor forma</li>
+                </a>
+                <a href="https://www.youtube.com/watch?v=ugCFAF-DyFE" target="_blank" rel="noopener noreferrer">
+                    <li class="list-group-item">Como relacionarte en el gym, obtener consejos y aprender de los mejores
+                    </li>
+                </a>
+                <a href="https://www.youtube.com/watch?v=JjkVZtTCOMY" target="_blank" rel="noopener noreferrer">
+                    <li class="list-group-item">Como gano mas masa muscular usando ejercicio interactivo y rutinas de
+                        aprendizaje guiadas</li>
+                </a>
+            </ul>
+        </div>
+    </section>
+
+
+    <!-- testimonios -->
+
+    <section id="testimonios-gym">
+        <h2 class="seccion-titulo">Critica</h2>
+        <h3 class="seccion-descripcion">Estas son algunas criticas a la serie</h3>
+        <!--seccion Carrusel-->
+        <div id="testimonios-carrusel2" class="carousel carousel-dark slide">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="container">
+                        <img class="testimonio-imagen rounded-circle"
+                            src="https://randomuser.me/api/portraits/women/82.jpg" alt="foto cliente mario">
+                        <p class="testimonio-tx">La serie al comienzo es excelente, tienen una trama con la que puede
+                            salir adelante de sobra, pero al avanzar las temporadas solo te meten capitulos de relleno
+                            con decirte que de pronto cada temporada después de la primera solo tiene un capítulo
+                            importante</p>
+                        <div class="testimonio-info">
+                            <p class="cliente">Daniel Gonzalez</p>
+                            <p class="cargo">Aficionado</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="container">
+                        <img class="testimonio-imagen rounded-circle"
+                            src="https://randomuser.me/api/portraits/men/54.jpg" alt="foto cliente carlos">
+                        <p class="testimonio-tx">Una auténtica genialidad de serie. Bajo argumentos completamente
+                            psicodélicos y situaciones creativamente rallantes esconde una cantidad enorme de ácidos
+                            detalles.</p>
+                        <div class="testimonio-info">
+                            <p class="cliente">Maria Mercedez</p>
+                            <p class="cargo">Aficionada</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="container">
+                        <img class="testimonio-imagen rounded-circle"
+                            src="https://randomuser.me/api/portraits/men/57.jpg" alt="foto cliente veronica">
+                        <p class="testimonio-tx">Es una de las pocas series que logran engancharme al instante,amo
+                            todo,los personajes,las referencias que nunca se escapan y toda la trama,dicen que es una
+                            serie sobrevalorada,pero es mentira,es una serie que merece valoración.</p>
+                        <div class="testimonio-info">
+                            <p class="cliente">Veronica</p>
+                            <p class="cargo">Aficionada</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#testimonios-carrusel2"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#testimonios-carrusel2"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+
+    <section id="contactos" class="contacto seccion-oscura">
+        <div class="container">
+            <div class="container text-center rectangulo d-flex justify-content-evenly">
+                <div class="class row">
+                    <div class="col-12 col-md-4 seccion-titulo">
+                        ¡CONOCE MAS..!
+                    </div>
+                    <div class="col-12 col-md-4 descripcion">
+                        Ingresa a la pagina oficial de Rick y Morty en:
+                    </div>
+                    <div class="col-12 col-md-4">
+                        <a href="https://www.adultswim.com/videos/rick-and-morty">
+                            <button type="button">
+                                Oficial.
+                                <i class="bi bi-globe2"></i>
+                            </button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pie de pagina -->
+    <footer id="footer" class="seccion-oscura d-flex flex-column align-items-center justify-content-center">
+        <img class="footer-logo" width="64" height="64"
+            src="https://img.icons8.com/pastel-glyph/64/checked-laptop--v1.png" alt="checked-laptop--v1" />
+        <p class="footer-texto text center">El dolor que sientes hoy es la fuerza que sentirás mañana.<br></p>
+        <div class="iconos-redes-sociales d-flex flex-wrap align-items-center justify-content-center">
+            <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-youtube"></i>
+            </a>
+            <a href="https://es-la.facebook.com/" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-facebook"></i>
+            </a>
+            <a href="https://web.whatsapp.com/" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-whatsapp"></i>
+            </a>
+            <a href="https://twitter.com/?lang=es" target="_blank" rel="noopener noreferrer">
+                <i class="bi bi-twitter"></i>
+            </a>
+        </div>
+        <div class="derechos-de-autor">Creado por Guedys Angola (2023) &#169;</div>
+    </footer>
+
+</section>
