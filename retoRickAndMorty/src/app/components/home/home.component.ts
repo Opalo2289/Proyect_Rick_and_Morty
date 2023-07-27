@@ -1,6 +1,40 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
+
+
 declare var iziToast: any
+
+
+// Interfaces para tipar los datos recibidos y las opciones de filtrado
+interface Character {
+  id: number;
+  name: string;
+  status: string;
+  species: string;
+  type: string;
+  gender: string;
+  origin: Location;
+  location: Location;
+  image: string;
+  episode: string[];
+  url: string;
+  created: string;
+}
+
+interface Location {
+  name: string;
+  url: string;
+}
+
+interface ApiResponse {
+  info: {
+    count: number;
+    pages: number;
+    next: string | null;
+    prev: string | null;
+  };
+  results: Character[];
+}
 
 
 @Component({
@@ -14,7 +48,7 @@ export class HomeComponent implements OnInit{
   public page = 1
   public pageSize = 20
   public count: any
-  public filters: any = {
+  public filters: { name: string; status: string} = {
     name: '',
     status: ''
   }

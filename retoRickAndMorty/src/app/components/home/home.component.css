@@ -21,8 +21,8 @@ ul {
 }
 
 li .nav-link {
-    color: rgb(222,233,225);
-    font-size: 20px;
+    color: rgb(255, 1, 1);
+    font-size: 30px;
     font-weight: bold;
     
 }
@@ -370,11 +370,17 @@ img{
 }
 
 .testimonio-texto {
-    color: rgb(9, 255, 251);
+    color: rgba(255, 9, 9, 0);
     max-width: 50%;
     font-size: 50px;
-    text-align: justify;
+    text-align: left;
     font-family: 'Rubik Mono One'
+}
+
+select {
+    background-color: rgba(117, 34, 218, 0.423);
+    border: 1px solid rgba(117, 34, 218, 0.4);
+    color: white;
 }
 
 .testimonio-tx {

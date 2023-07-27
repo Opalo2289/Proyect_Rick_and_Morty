@@ -12,53 +12,20 @@
                 </a>
                 <ul class="navbar-nav d-flex justify-content-center align-items-center">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#sobre-mi">Sobre mí</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#proyectos">Proyectos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#testimonios">Testimonios</a>
+                        <a class="nav-link" href="#proyectos">Personajes</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#contactos">Contacto</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contactos" [routerLink]="['/gym_page/add']">Registro de usuarios</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-    <!-- seccion hero -->
-    <!-- <div class="hero-principal d-flex flex-column justify-content-center align-items-center">
-            <img class="hero-imagen-desarrollador" src="imagenes/2210184.png" alt="foto de Guedys Angola">
-            <h1>Hola, soy Guedys Angola</h1>
-            <h2>Desarrollo sitios web</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis fugiat, ad cupiditate voluptate consequatur quo maiores illo voluptatum qui maxime at sit, eveniet velit in! Eum soluta hic praesentium amet.</p>
-            <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum voluptatem nulla itaque. Ab ducimus natus eveniet officiis enim explicabo beatae. Dicta in eaque dolorum deleniti facere, inventore enim eos temporibus?</h2>
-            <div class="hero-inferior">
-                <img class="hero-inferior-imagen img-fluid"
-                    src="imagenes/ilustracion-concepto-abstracto-desarrollo-micrositio-desarrollo-web-micrositio-pequeno-sitio-internet-servicio-diseno-grafico-landing-page-equipo-programacion-software_.webp"
-                    alt="imagen html, css, JavaScript, persona en un pc">
-            </div>
-        </div>
-    </section> -->
     <div id="testimonios-carrusel" class="carousel carousel-dark slide">
         <div class="carousel-inner">
             <div class="carousel-item active">
                 <div class="container">
                     <p class="testimonio-texto">Sé bueno Morty. Sé mejor que yo.</p>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="container">
-                    <p class="testimonio-texto">CREE EN TI</p>
-                </div>
-            </div>
-            <div class="carousel-item">
-                <div class="container">
-                    <p class="testimonio-texto">SUPERATE</p>
                 </div>
             </div>
         </div>
@@ -82,7 +49,7 @@
             <div class="container text-center">
                 <div class="eleccion col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div>
-                        <h1>¿Y qué si él es el diablo,<span>RICK</span> ? </h1>
+                        <h1>¿Y qué si él es el diablo <span>RICK</span> ? </h1>
                         <h5>Si te matan en el sueño de alguien, <span>mueres de verdad.</span></h5>
                     </div>
                 </div>
@@ -207,9 +174,6 @@
                         </div>
                     </div>
                 </ng-container>
-                    
-                
-               
                 <pagination-controls (pageChange)="completeData($event)"></pagination-controls>
             </div>
         </div>
@@ -239,23 +203,21 @@
                     <li class="list-group-item">Un artículo «científico» sobre Rick and Morty dejó en evidencia a
                         revistas académicas fraudulentas</li>
                 </a>
-                <a href="https://www.b2sport.es/noticias/elementos-para-tener-un-gimnasio-en-casa/" target="_blank"
+                <a href="https://elpais.com/cultura/2017/08/11/television/1502456914_337920.html" target="_blank"
                     rel="noopener noreferrer">
-                    <li class="list-group-item">Qué elementos usar para entrenar y que tus rutinas sean espectaculares
+                    <li class="list-group-item">‘Rick y Morty’: es gracioso porque es horrible, asqueroso y hasta putrefacto
                     </li>
                 </a>
-                <a href="https://www.esquire.com/es/salud-fitness-running/a13546346/a-que-hora-es-mejor-ir-al-gimnasio-cuantas-veces-a-la-semana/"
+                <a href="https://www.elmundo.es/television/series/2023/01/26/63d27baefdddff12228b456f.html"
                     target="_blank" rel="noopener noreferrer">
-                    <li class="list-group-item">Cual horario es mejor para entrenar y no dormirte en el intento,
-                        descubre la mejor forma</li>
+                    <li class="list-group-item">¿Qué va a pasar con Rick y Morty tras el despido de su creador?</li>
                 </a>
-                <a href="https://www.youtube.com/watch?v=ugCFAF-DyFE" target="_blank" rel="noopener noreferrer">
-                    <li class="list-group-item">Como relacionarte en el gym, obtener consejos y aprender de los mejores
+                <a href="https://divulgacion.minciencias.gov.co/opinion/rickymorty" target="_blank" rel="noopener noreferrer">
+                    <li class="list-group-item">Dios no existe y probablemente lo mató Rick Sánche
                     </li>
                 </a>
-                <a href="https://www.youtube.com/watch?v=JjkVZtTCOMY" target="_blank" rel="noopener noreferrer">
-                    <li class="list-group-item">Como gano mas masa muscular usando ejercicio interactivo y rutinas de
-                        aprendizaje guiadas</li>
+                <a href="https://www.superaficionados.com/rick-and-morty-curiosidades-serie/" target="_blank" rel="noopener noreferrer">
+                    <li class="list-group-item">Rick y Morty: las curiosidades más locas de la serie más irreverente</li>
                 </a>
             </ul>
         </div>
@@ -279,8 +241,8 @@
                             con decirte que de pronto cada temporada después de la primera solo tiene un capítulo
                             importante</p>
                         <div class="testimonio-info">
-                            <p class="cliente">Daniel Gonzalez</p>
-                            <p class="cargo">Aficionado</p>
+                            <p class="cliente">Daniela Pirela</p>
+                            <p class="cargo">Aficionada</p>
                         </div>
                     </div>
                 </div>
@@ -292,8 +254,8 @@
                             psicodélicos y situaciones creativamente rallantes esconde una cantidad enorme de ácidos
                             detalles.</p>
                         <div class="testimonio-info">
-                            <p class="cliente">Maria Mercedez</p>
-                            <p class="cargo">Aficionada</p>
+                            <p class="cliente">Daniel Gonzalez</p>
+                            <p class="cargo">Aficionado</p>
                         </div>
                     </div>
                 </div>
@@ -305,8 +267,8 @@
                             todo,los personajes,las referencias que nunca se escapan y toda la trama,dicen que es una
                             serie sobrevalorada,pero es mentira,es una serie que merece valoración.</p>
                         <div class="testimonio-info">
-                            <p class="cliente">Veronica</p>
-                            <p class="cargo">Aficionada</p>
+                            <p class="cliente">Carlos</p>
+                            <p class="cargo">Aficionado</p>
                         </div>
                     </div>
                 </div>
