@@ -12,13 +12,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { routing } from './app.routing';
 import { HomeComponent } from './components/home/home.component';
-import { FormsModule } from '@angular/forms'; 
+import { FormsModule } from '@angular/forms';
+import { FooterComponent } from './components/footer/footer.component'; 
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
