@@ -27,6 +27,9 @@
                 <div class="container">
                     <p class="testimonio-texto">Sé bueno Morty. Sé mejor que yo.</p>
                 </div>
+                <div class="container">
+                    <p class="testimonio-texto">Es una máquina nueva. Detecta cosas hasta tu trasero.</p>
+                </div>
             </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#testimonios-carrusel" data-bs-slide="prev">
@@ -56,7 +59,7 @@
     </section>
     <!-- proyectos -->
     <section id="proyectos" class="proyectos-recientes seccion-clara d-flex flex-column body-transparente">
-        <h1 class="seccion-titulo texto-negro">PERSONAJES MAS IMPORTANTES</h1>
+        <h1 class="seccion-titulo texto-negro">PERSONAJES DESTACADOS</h1>
         <h3 class="seccion-descripcion">Estos son algunos los personajes mas atractivos de la trama</h3>
         <!--Galeria de proyectos-->
         <div class="container text-center proyectos-contenedor">
@@ -64,21 +67,21 @@
                 <!-- Filtrar por nombre -->
                 <ng-container>
                     <div class="col-12 col-md-6 col-lg-4">
-                        <select class="form-select" aria-label="Default select example"  [(ngModel)]="filters.name">
+                        <select class="form-select" aria-label="Filtar por nombre"  [(ngModel)]="filters.name">
                             <option value="">-- Filtrar por Nombre --</option>
                             <option *ngFor="let item of selectNames" [value]="item">{{ item }}</option>
                         </select>
                     </div>
                     <!-- Filtrar por estado -->
                     <div class="col-12 col-md-6 col-lg-4">
-                        <select class="form-select" aria-label="Default select example"   [(ngModel)]="filters.status">
+                        <select class="form-select" aria-label="Filtrar por estado"   [(ngModel)]="filters.status">
                             <option value="">-- Filtrar por Estado --</option>
                             <option *ngFor="let item of selectStatus" [value]="item">{{ item }}</option>
                         </select>
                     </div>
 
                     <div class="col-12 col-md-6 col-lg-4">
-                        <select class="form-select" aria-label="Default select example" [(ngModel)]="selectedPageSize" (change)="pageSizeEvent($event)">
+                        <select class="form-select" aria-label="Filtrar por cantidad" [(ngModel)]="selectedPageSize" (change)="pageSizeEvent($event)">
                           <option value="">-- Filtrar por cantidad --</option>
                           <option *ngFor="let item of filterSize" [value]="item">{{ item }}</option>
                         </select>
@@ -140,11 +143,10 @@
                         <img class="testimonio-imagen rounded-circle"
                             src="https://randomuser.me/api/portraits/women/82.jpg" alt="foto cliente mario">
                         <p class="testimonio-tx">La serie al comienzo es excelente, tienen una trama con la que puede
-                            salir adelante de sobra, pero al avanzar las temporadas solo te meten capitulos de relleno
-                            con decirte que de pronto cada temporada después de la primera solo tiene un capítulo
-                            importante</p>
+                            salir adelante de sobra, pero al avanzar las temporadas solo te meten capitulos de relleno.
+                          </p>
                         <div class="testimonio-info">
-                            <p class="cliente">Daniela Pirela</p>
+                            <p class="cliente">Daniela Blank</p>
                             <p class="cargo">Aficionada</p>
                         </div>
                     </div>
@@ -167,8 +169,7 @@
                         <img class="testimonio-imagen rounded-circle"
                             src="https://randomuser.me/api/portraits/men/57.jpg" alt="foto cliente veronica">
                         <p class="testimonio-tx">Es una de las pocas series que logran engancharme al instante,amo
-                            todo,los personajes,las referencias que nunca se escapan y toda la trama,dicen que es una
-                            serie sobrevalorada,pero es mentira,es una serie que merece valoración.</p>
+                            todo,los personajes,las referencias que nunca se escapan y toda la trama.</p>
                         <div class="testimonio-info">
                             <p class="cliente">Carlos</p>
                             <p class="cargo">Aficionado</p>

@@ -1,41 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { ApiService } from 'src/app/services/api.service';
+import { ApiResponse } from 'src/app/interfaces/apiResponse.interface';
+import { Character } from 'src/app/interfaces/basedata.interface';
+import { Filter } from 'src/app/interfaces/filters.interface';
+import { ApiServiceCharacter } from 'src/app/services/api.serviceCharacter';
 
 
 declare var iziToast: any
-
-
-// Interfaces para tipar los datos recibidos y las opciones de filtrado
-interface Character {
-  id: number;
-  name: string;
-  status: string;
-  species: string;
-  type: string;
-  gender: string;
-  origin: Location;
-  location: Location;
-  image: string;
-  episode: string[];
-  url: string;
-  created: string;
-}
-
-interface Location {
-  name: string;
-  url: string;
-}
-
-interface ApiResponse {
-  info: {
-    count: number;
-    pages: number;
-    next: string | null;
-    prev: string | null;
-  };
-  results: Character[];
-}
-
 
 @Component({
   selector: 'app-home',
@@ -44,24 +14,22 @@ interface ApiResponse {
 })
 export class HomeComponent implements OnInit{
 
-  public data : any[]= [];
+  public data : Character[]= [];
   public page = 1
-  public pageSize = 20
-  public count: any
-  public filters: { name: string; status: string} = {
+  public count: number | undefined;
+  public filters: Filter = {
     name: '',
     status: ''
-  }
+  };
 
-  public selectNames: any = []
-  public selectStatus: any = []
-  public load_data: any = true;
+  public selectNames: string[] = [];
+  public selectStatus: string[] = [];
+  public load_data = true;
 
-  public filterSize: any = [5, 10, 15, 20]
-  // public openSize: any = 20
-  public selectedPageSize = 20;
+  public filterSize: number[] = [5, 10, 15, 20];
+  public selectedPageSize: number = 20;
 
-  constructor(private _apiService: ApiService) {}
+  constructor(private _apiServiceCharacter: ApiServiceCharacter) {}
 
   ngOnInit(): void {
     this.completeData()
@@ -91,21 +59,21 @@ export class HomeComponent implements OnInit{
   }
   
 
-  completeData(page: any = 1) {
-    this.page = page;
-    // console.log(page)
-    this._apiService.getData(page, this.filters).subscribe(
-      response => {
-        console.log(this.page)
-        this.count = response.info.count
-        this.data = response.results;
-        this.getSelectParams()
-        setTimeout(() => {
-          this.load_data = false
-        },3000)
-        
+  completeData(page?: number): void {
+    this.page = page || 1;
+    this.fetchData(this.page);
+  }
+
+  fetchData(page: number): void {
+    this._apiServiceCharacter.getData(page, this.filters).subscribe({
+      next: (response: ApiResponse<Character>) => {
+        const { info, results } = response;
+        this.count = info.count;
+        this.data = results;
+        this.getSelectParams();
+        this.completeDataDelayed();
       },
-      error => {
+      error: (error: any) => {
         iziToast.show({
           title: 'ERROR',
           titleColor: '#812',
@@ -113,12 +81,19 @@ export class HomeComponent implements OnInit{
           class: 'test-danger',
           position: 'topRight',
           message: 'NO SE ENCONTRARON COINCIDENCIAS',
-          messageSize: 'large'
+          messageSize: 'large',
         });
-        console.log(error.error.error)
+        console.log(error);
       }
-    );
-  };
+    });
+  }
+
+  private completeDataDelayed() {
+    const delayTimeMs = 3000;
+    setTimeout(() => {
+      this.load_data = false;
+    }, delayTimeMs);
+  }
 
   
 
@@ -126,7 +101,7 @@ export class HomeComponent implements OnInit{
     this.filters = {name: '', status: ''}
     this.completeData()
   }
-
+  
   pageSizeEvent(event: any) {
     this.selectedPageSize = event.target.value
     this.completeData(); // Vuelve a cargar los datos con el nuevo tamaño de página seleccionado

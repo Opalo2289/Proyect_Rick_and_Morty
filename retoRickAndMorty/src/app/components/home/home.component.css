@@ -21,7 +21,7 @@ ul {
 }
 
 li .nav-link {
-    color: rgb(255, 1, 1);
+    color: rgb(255, 255, 255);
     font-size: 30px;
     font-weight: bold;
     
@@ -295,11 +295,11 @@ h1 {
 }
 
 .testimonio-texto {
-    color: rgba(255, 9, 9, 0);
+    color: rgba(53, 7, 7, 0);
     max-width: 50%;
     font-size: 50px;
     text-align: left;
-    font-family: 'Rubik Mono One'
+    font-family: 'Rubik Mono One', cursive
 }
 
 select {
