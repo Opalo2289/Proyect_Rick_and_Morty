@@ -1,0 +1,55 @@
+/* ARTICULOS */
+.articulos {
+    min-height: 500px;
+    padding: 30px;
+}
+
+
+.articulos .card {
+    width: 80%;
+    max-width: 600px;
+    background-color: transparent;
+
+}
+
+.articulos .card-header {
+    font-weight: bold;
+}
+
+.list-group-item {
+    background-color: transparent;
+}
+
+
+
+
+
+/* pruebaaaaaa */
+
+
+
+
+
+ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    padding: 30px;
+}
+
+li .nav-link {
+    color: rgb(255, 1, 1);
+    font-size: 30px;
+    font-weight: bold;
+    
+}
+
+/*estilos generales*/
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+

@@ -14,7 +14,8 @@ import { routing } from './app.routing';
 import { HomeComponent } from './components/home/home.component';
 import { FormsModule } from '@angular/forms';
 import { FooterComponent } from './components/footer/footer.component';
-import { BodyComponent } from './components/body/body.component'; 
+import { BodyComponent } from './components/body/body.component';
+import { ArticulosComponent } from './components/articulos/articulos.component'; 
 
 
 @NgModule({
@@ -23,6 +24,7 @@ import { BodyComponent } from './components/body/body.component';
     HomeComponent,
     FooterComponent,
     BodyComponent,
+    ArticulosComponent,
   ],
   imports: [
     BrowserModule,
