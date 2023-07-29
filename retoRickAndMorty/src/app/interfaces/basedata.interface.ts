@@ -12,6 +12,7 @@ export interface BaseData {
   }
   
   export interface Episode extends BaseData {
+    name: string;
     air_date: string; // La fecha de emisión del episodio.
     episode: string; // El código del episodio.
     characters: string[]; // Lista de URLs de personajes que aparecieron en el episodio.

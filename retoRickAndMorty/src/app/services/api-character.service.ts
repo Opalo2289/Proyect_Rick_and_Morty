@@ -13,6 +13,10 @@ import { BASE_CHARACTER_API_URL } from '../constants/constants';
 export class ApiServiceCharacter implements ApiService<Character> {
 
   constructor(private http: HttpClient) {}
+  
+  getDataEpisode(episode: string): Observable<ApiResponse<Character>> {
+    throw new Error('Method not implemented.');
+  }
 
   public getData(page: number, filters: Filter): Observable<ApiResponse<Character>> {
     
