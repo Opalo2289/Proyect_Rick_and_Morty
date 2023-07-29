@@ -1,11 +1,19 @@
 import { ModuleWithProviders } from "@angular/core";
 import { RouterModule, Routes } from "@angular/router";
-import { HomeComponent } from "./components/home/home.component";
+import { HomePageComponent } from "./components/views/home-page/home-page.component";
+import { CharacterComponent } from "./components/views/characters/character/character.component";
+import { EpisodeComponent } from "./components/views/episodes/episode/episode.component";
+import { LocationComponent } from "./components/views/locations/location/location.component";
 
 
 const appRoute: Routes = [
     { path: '', redirectTo: 'home', pathMatch: "full" },
-    { path: 'home',component: HomeComponent },
+    { path: 'home',component: HomePageComponent },
+    {path: 'home', children: [
+        { path: 'character',component: CharacterComponent },
+        { path: 'episodes',component: EpisodeComponent },
+        { path: 'location',component: LocationComponent },
+    ]}
 
    
 ];

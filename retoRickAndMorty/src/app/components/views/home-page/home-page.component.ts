@@ -1,18 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { ApiResponse } from 'src/app/interfaces/apiResponse.interface';
 import { Character } from 'src/app/interfaces/basedata.interface';
 import { Filter } from 'src/app/interfaces/filters.interface';
-import { ApiServiceCharacter } from 'src/app/services/api.serviceCharacter';
+import { ApiServiceCharacter } from 'src/app/services/api-character.service';
 
 
 declare var iziToast: any
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-home-page',
+  templateUrl: './home-page.component.html',
+  styleUrls: ['./home-page.component.css']
 })
-export class HomeComponent implements OnInit{
+export class HomePageComponent {
 
   public data : Character[]= [];
   public page = 1
@@ -29,7 +29,7 @@ export class HomeComponent implements OnInit{
   public filterSize: number[] = [5, 10, 15, 20];
   public selectedPageSize: number = 20;
 
-  constructor(private _apiServiceCharacter: ApiServiceCharacter) {}
+  constructor(private _serviceCharacter: ApiServiceCharacter) {}
 
   ngOnInit(): void {
     this.completeData()
@@ -65,7 +65,7 @@ export class HomeComponent implements OnInit{
   }
 
   fetchData(page: number): void {
-    this._apiServiceCharacter.getData(page, this.filters).subscribe({
+    this._serviceCharacter.getData(page, this.filters).subscribe({
       next: (response: ApiResponse<Character>) => {
         const { info, results } = response;
         this.count = info.count;
@@ -109,3 +109,5 @@ export class HomeComponent implements OnInit{
 
 
 }
+
+

@@ -1,0 +1,175 @@
+/*estilos generales*/
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-family: 'Rubik Dirt', cursive;
+}
+
+.seccion-oscura {
+    color: white;
+    background-color: transparent
+}
+
+.seccion-clara {
+    color: black;
+    background-color: white;
+}
+
+.seccion-titulo {
+    font-size: 2rem;
+    padding: 15px 0;
+    font-family: 'Rubik Dirt', cursive;
+}
+
+.seccion-descripcion {
+    font-size: 1.2rem;
+    color: rgb(8, 8, 8);
+}
+
+.seccion-texto {
+    font-size: 1.2rem;
+}
+
+
+
+
+.texto-blanco {
+    color: white;
+}
+
+/* video */
+.video-youtube {
+    margin-top: 2%;
+}
+
+/*personajes*/
+
+.entero {
+    background: rgb(67, 216, 107);
+    background: radial-gradient(circle, rgb(111, 188, 188) 10%, rgb(117, 34, 218) 100%)
+}
+
+.body-transparente {
+    background-color: transparent;
+}
+
+/*Testimonios carrusel 2*/
+.testimonios-press {
+    padding: 40px 40px 80px 40px;
+}
+
+#testimonios-press {
+    max-width: 800px;
+}
+
+.carousel-item {
+    height: 500px;
+}
+
+.carousel-item .container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.testimonio-imagen {
+    height: 150px;
+    width: 150px;
+    margin: 10px 10px 20px 10px;
+    z-index: 2;
+}
+
+.testimonio-texto {
+    color: rgba(53, 7, 7, 0);
+    max-width: 50%;
+    font-size: 50px;
+    text-align: left;
+    font-family: 'Rubik Mono One', cursive
+}
+
+
+.testimonio-tx {
+    color: rgb(5, 20, 47);
+    max-width: 50%;
+    font-size: 10px;
+    text-align: center;
+    font-family: 'Rubik Mono One', sans-serif;
+}
+
+.testimonio-info {
+    font-weight: bold;
+    text-align: center;
+}
+
+.testimonio-info p {
+    margin-bottom: 0;
+}
+
+.testimonio-footer .cliente {
+    font-size: 1.2rem;
+    
+}
+
+.testimonio-info .cargo {
+    font-size: 0.9rem;
+    color: #363535;
+}
+
+
+
+
+
+
+
+
+/*adaptable (resposive)*/
+
+@media screen and (max-width: 400px) { /*esto es para que los iconos cuando el dispositivo sea pequeño ellos tambien se encojan*/
+    .overlay p {
+        font-size: 18px;
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .navbar-brand {
+        display: none;
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .hero-inferior-imagen {
+        max-width: 600px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .testimonio-imagen {
+        height: 120px;
+        width: 120px;
+    }
+    
+    .testimonio-texto {
+        font-size: 18px;
+    }
+}
+
+
+
+
+@media screen and (max-width: 1170px) {
+    .video-youtube{
+        /* Agrega estilos específicos para dispositivos móviles aquí */
+        background-size: contain; /* Ajusta el tamaño de la imagen para que quepa completamente en el contenedor */
+        /* Otros estilos específicos para dispositivos móviles */
+    }
+}

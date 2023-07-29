@@ -1,0 +1,66 @@
+<section id="personajes" class="personajes-recientes seccion-clara d-flex flex-column body-transparente">
+    <h1 class="seccion-titulo texto-negro">PERSONAJES DESTACADOS</h1>
+    <!--Galeria de personajes-->
+    <div class="container text-center personajes-contenedor">
+        <div class="row">
+            <!-- Filtrar por nombre -->
+            <ng-container>
+                <div class="col-12 col-md-6 col-lg-4">
+                    <select class="form-select" aria-label="Filtar por nombre"  [(ngModel)]="filters.name">
+                        <option value="">-- Filtrar por Nombre --</option>
+                        <option *ngFor="let item of selectNames" [value]="item">{{ item }}</option>
+                    </select>
+                </div>
+                <!-- Filtrar por estado -->
+                <div class="col-12 col-md-6 col-lg-4">
+                    <select class="form-select" aria-label="Filtrar por estado"   [(ngModel)]="filters.status">
+                        <option value="">-- Filtrar por Estado --</option>
+                        <option *ngFor="let item of selectStatus" [value]="item">{{ item }}</option>
+                    </select>
+                </div>
+
+                <div class="col-12 col-md-6 col-lg-4">
+                    <select class="form-select" aria-label="Filtrar por cantidad" [(ngModel)]="selectedPageSize" (change)="pageSizeEvent($event)">
+                      <option value="">-- Filtrar por cantidad --</option>
+                      <option *ngFor="let item of filterSize" [value]="item">{{ item }}</option>
+                    </select>
+                </div>
+                  
+                  
+            </ng-container>
+            
+            <div class="col-md-12 mt-2">
+                <button type="button" class="btn btn-primary" (click)="applyFilter()">Aplicar Filtro</button>
+                <button type="button" class="btn btn-dark m-2" (click)="deleteFilter()">Borrar filtro</button>
+              </div>
+            <!-- proyecto 1 -->
+            <ng-container *ngIf="load_data">
+                <div>
+                    <div class="spinner-grow" style="width: 3rem; height: 3rem;" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+            </ng-container>
+            <ng-container *ngIf="!load_data">
+                <div class="col-12 col-md-6 col-lg-4" *ngFor="let item of data | paginate:{ itemsPerPage: selectedPageSize, currentPage: page, totalItems: count }">
+                  <div class="proyecto">
+                    <img src="{{item.image}}" alt="proyecto2">
+                    <div class="overlay">
+                      <p>{{item.name}},</p>
+                      <p>{{item.species}},</p>
+                      <p>{{item.status}}</p>
+                    </div>
+                  </div>
+                </div>
+              </ng-container>
+              
+            <pagination-controls (pageChange)="completeData($event)"></pagination-controls>
+        </div>
+    </div>
+    <!-- <a href="https://rickymortylatino.online/" target="_blank" rel="noopener noreferrer">
+        <button class="btn btn-info button">
+            Ver episodios completos
+            <i class="bi bi-arrow-right-circle-fill"></i>
+        </button>
+    </a> -->
+</section>

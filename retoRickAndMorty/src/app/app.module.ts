@@ -11,20 +11,28 @@ import { NgxPaginationModule } from 'ngx-pagination';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { routing } from './app.routing';
-import { HomeComponent } from './components/home/home.component';
 import { FormsModule } from '@angular/forms';
 import { FooterComponent } from './components/footer/footer.component';
 import { BodyComponent } from './components/body/body.component';
-import { ArticulosComponent } from './components/articulos/articulos.component'; 
+import { ArticulosComponent } from './components/articulos/articulos.component';
+import { CharacterComponent } from './components/views/characters/character/character.component';
+import { LocationComponent } from './components/views/locations/location/location.component';
+import { EpisodeComponent } from './components/views/episodes/episode/episode.component';
+import { HomePageComponent } from './components/views/home-page/home-page.component';
+import { HeaderComponent } from './components/headers/header/header.component'; 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
     FooterComponent,
     BodyComponent,
     ArticulosComponent,
+    CharacterComponent,
+    LocationComponent,
+    EpisodeComponent,
+    HomePageComponent,
+    HeaderComponent,
   ],
   imports: [
     BrowserModule,

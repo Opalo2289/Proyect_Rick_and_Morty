@@ -1,0 +1,84 @@
+<app-header></app-header>
+<section class="entero">
+    <!-- body -->
+    <app-body></app-body>
+    <!-- video -->
+    <section class="video-youtube">
+        <div class="container-fluid">
+            <iframe width="360" height="315" src="https://www.youtube.com/embed/E8cXKMR9a1Q" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <!-- Personajes -->
+    <app-character></app-character>
+
+    <!-- articulos -->
+   <app-articulos></app-articulos>
+
+    <!-- critica -->
+    <section id="critica-gym">
+        <h2 class="seccion-titulo">Critica</h2>
+        <h3 class="seccion-descripcion">Estas son algunas criticas a la serie</h3>
+        <!--seccion Carrusel-->
+        <div id="critica-carrusel2" class="carousel carousel-dark slide">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="container">
+                        <img class="testimonio-imagen rounded-circle"
+                            src="https://randomuser.me/api/portraits/women/82.jpg" alt="foto cliente mario">
+                        <p class="testimonio-tx">La serie al comienzo es excelente, tienen una trama con la que puede
+                            salir adelante de sobra, pero al avanzar las temporadas solo te meten capitulos de relleno.
+                          </p>
+                        <div class="testimonio-info">
+                            <p class="cliente">Daniela Blank</p>
+                            <p class="cargo">Aficionada</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="container">
+                        <img class="testimonio-imagen rounded-circle"
+                            src="https://randomuser.me/api/portraits/men/54.jpg" alt="foto cliente carlos">
+                        <p class="testimonio-tx">Una auténtica genialidad de serie. Bajo argumentos completamente
+                            psicodélicos y situaciones creativamente rallantes esconde una cantidad enorme de ácidos
+                            detalles.</p>
+                        <div class="testimonio-info">
+                            <p class="cliente">Daniel Gonzalez</p>
+                            <p class="cargo">Aficionado</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="container">
+                        <img class="testimonio-imagen rounded-circle"
+                            src="https://randomuser.me/api/portraits/men/57.jpg" alt="foto cliente veronica">
+                        <p class="testimonio-tx">Es una de las pocas series que logran engancharme al instante,amo
+                            todo,los personajes,las referencias que nunca se escapan y toda la trama.</p>
+                        <div class="testimonio-info">
+                            <p class="cliente">Carlos</p>
+                            <p class="cargo">Aficionado</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#critica-carrusel2"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#critica-carrusel2"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <app-footer></app-footer>
+
+</section>
+
+
+
+
