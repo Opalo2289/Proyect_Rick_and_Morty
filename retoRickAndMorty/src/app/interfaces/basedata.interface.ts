@@ -6,6 +6,7 @@ export interface BaseData {
   }
   
   export interface Location extends BaseData {
+    name: string
     type: string; // El tipo de la ubicación.
     dimension: string; // La dimensión en la que se encuentra la ubicación.
     residents: string[]; // Lista de URLs de personajes que fueron vistos por última vez en esta ubicación.

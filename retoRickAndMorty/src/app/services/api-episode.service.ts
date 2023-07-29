@@ -4,7 +4,7 @@ import { Observable, catchError, throwError } from 'rxjs';
 import { Episode } from '../interfaces/basedata.interface';
 import { ApiResponse } from '../interfaces/apiResponse.interface';
 import { Filter } from '../interfaces/filters.interface';
-import { BASE_CHARACTER_API_URL, BASE_EPISODE_API_URL } from '../constants/constants';
+import { BASE_EPISODE_API_URL } from '../constants/constants';
 import { ApiService } from './api.service';
 
 @Injectable({

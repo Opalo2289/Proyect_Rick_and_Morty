@@ -1,1 +1,25 @@
-<p>location works!</p>
+<div class="container">
+    <div class="row">
+      <div class="col">
+        <div class="accordion" id="locationAccordion">
+  
+          <!-- Loop through locations and create accordion items -->
+          <div *ngFor="let loc of location" class="accordion-item">
+            <h2 class="accordion-header" id="heading{{ loc.dimension }}">
+              <button class="accordion-button" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#collapse' + loc.id" [attr.aria-controls]="'collapse' + loc.id">
+                {{ loc.name }}
+              </button>
+            </h2>
+            <div id="collapse{{ loc.residents }}" class="accordion-collapse collapse" [attr.aria-labelledby]="'heading' + loc.id" [attr.data-bs-parent]="'#locationAccordion'">
+              <div class="accordion-body">
+                <p>Air Date: {{ loc.id }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+ 
