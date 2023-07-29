@@ -1,0 +1,11 @@
+.container {
+    max-width: 960px; /* Ajusta el valor según lo que desees como ancho máximo */
+    margin: 0 auto; /* Centrar horizontalmente */
+    padding: 20px 0; /* Agregar márgenes en la parte superior e inferior para dar espacio */
+  }
+
+  .font {
+    font-family: Abril Fatface, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+    font-size: x-large;
+}

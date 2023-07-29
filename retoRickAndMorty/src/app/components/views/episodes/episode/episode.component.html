@@ -5,13 +5,13 @@
 
   <div class="row">
     <div class="col">
-      <input #searchInput type="text" class="form-control" (input)="searchEpisodes(searchInput.value)" placeholder="Buscar episodios">
+     
       <div class="accordion" id="episodeAccordion">
         <div *ngFor="let episode of episodes" class="accordion-item">
           <h2 class="accordion-header" id="heading{{ episode.id }}">
             <button class="accordion-button" type="button" data-bs-toggle="collapse"
               [attr.data-bs-target]="'#collapse' + episode.id" [attr.aria-controls]="'collapse' + episode.id">
-              {{ episode.name }}
+              <h5>{{ episode.name }}</h5>
             </button>
           </h2>
           <div id="collapse{{ episode.id }}" class="accordion-collapse collapse"

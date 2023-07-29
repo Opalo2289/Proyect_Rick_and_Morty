@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { ApiResponse } from 'src/app/interfaces/apiResponse.interface';
 import { Character } from 'src/app/interfaces/basedata.interface';
 import { Filter } from 'src/app/interfaces/filters.interface';
@@ -28,7 +29,7 @@ export class CharacterComponent {
   public filterSize: number[] = [5, 10, 15, 20];
   public selectedPageSize: number = 20;
 
-  constructor(private _serviceChacarter: ApiServiceCharacter) {}
+  constructor(private _serviceChacarter: ApiServiceCharacter, private _router: Router) {}
 
   ngOnInit(): void {
     this.completeData()
@@ -104,6 +105,10 @@ export class CharacterComponent {
   pageSizeEvent(event: any) {
     this.selectedPageSize = event.target.value
     this.completeData(); // Vuelve a cargar los datos con el nuevo tamaño de página seleccionado
+  }
+
+  irAlDetalle() {
+    this._router.navigateByUrl('/detalle')
   }
 
 

@@ -19,7 +19,8 @@ import { CharacterComponent } from './components/views/characters/character/char
 import { LocationComponent } from './components/views/locations/location/location.component';
 import { EpisodeComponent } from './components/views/episodes/episode/episode.component';
 import { HomePageComponent } from './components/views/home-page/home-page.component';
-import { HeaderComponent } from './components/headers/header/header.component'; 
+import { HeaderComponent } from './components/headers/header/header.component';
+import { SingleCharacterComponent } from './components/views/single-character/single-character.component'; 
 
 
 @NgModule({
@@ -33,6 +34,7 @@ import { HeaderComponent } from './components/headers/header/header.component';
     EpisodeComponent,
     HomePageComponent,
     HeaderComponent,
+    SingleCharacterComponent,
   ],
   imports: [
     BrowserModule,

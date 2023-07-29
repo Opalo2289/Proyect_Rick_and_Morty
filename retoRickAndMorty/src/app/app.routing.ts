@@ -4,6 +4,7 @@ import { HomePageComponent } from "./components/views/home-page/home-page.compon
 import { CharacterComponent } from "./components/views/characters/character/character.component";
 import { EpisodeComponent } from "./components/views/episodes/episode/episode.component";
 import { LocationComponent } from "./components/views/locations/location/location.component";
+import { SingleCharacterComponent } from "./components/views/single-character/single-character.component";
 
 
 const appRoute: Routes = [
@@ -13,7 +14,9 @@ const appRoute: Routes = [
         { path: 'character',component: CharacterComponent },
         { path: 'episodes',component: EpisodeComponent },
         { path: 'location',component: LocationComponent },
-    ]}
+    ]},
+
+    { path: 'detalle',component: SingleCharacterComponent },
 
    
 ];
