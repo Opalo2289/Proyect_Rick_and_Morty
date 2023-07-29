@@ -13,7 +13,7 @@ export class ApiEpisodeService {
 
   constructor(private http: HttpClient) { }
 
-  getData(prev: string, name: string, pages: number): Observable<ApiResponse<Episode>> {
+  getData(prev: string, name: string, pages: number, currentPage: number): Observable<ApiResponse<Episode>> {
 
     let params = new HttpParams();
 
