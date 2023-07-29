@@ -1,3 +1,4 @@
+
 <section class="hero align-items-stretch">
     <nav class="navbar navbar-expand-md navbar-ligth">
         <div class="container-fluid">
@@ -11,9 +12,10 @@
                 </a>
                 <ul class="navbar-nav d-flex justify-content-center align-items-center">
                     <li class="nav-item">
-                        <a class="nav-link" href="#personajes">Personajes</a>
-                        <a class="nav-link" [routerLink]="['/home/episodes']" routerLinkActive="active">Episodios</a>
-                        <a class="nav-link" [routerLink]="['/home/location']" routerLinkActive="active">lugares</a>
+                        <button type="button" class="btn btn-outline-warning" style="margin-right: 10px;"><a class="nav-link" href="#personajes" [routerLink]="['/home']" routerLinkActive="active">Home</a></button>
+                        <button type="button" class="btn btn-outline-warning" style="margin-right: 10px;"><a class="nav-link" href="#personajes" [routerLink]="['/home/character']" routerLinkActive="active">Personajes</a></button>
+                        <button type="button" class="btn btn-outline-warning" style="margin-right: 10px;"><a class="nav-link" [routerLink]="['/home/episodes']" routerLinkActive="active">Episodios</a></button>
+                        <button type="button" class="btn btn-outline-warning"><a class="nav-link" [routerLink]="['/home/location']" routerLinkActive="active">lugares</a></button>
                     </li>
                 </ul>
             </div>

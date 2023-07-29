@@ -1,5 +1,9 @@
 
-
+.font {
+    font-family: Abril Fatface, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+    font-size: x-large;
+}
 
 .overlay p { /*Estilo de los parrafos dentro de la imagen */
     font-size: 25px;

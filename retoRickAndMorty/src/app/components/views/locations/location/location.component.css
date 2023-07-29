@@ -1,0 +1,11 @@
+.font {
+    font-family: Abril Fatface, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: center;
+    font-size: x-large;
+}
+
+.table1 {
+    max-height: 350px;
+    max-width: 93vw;
+    overflow-x: scroll;
+}
