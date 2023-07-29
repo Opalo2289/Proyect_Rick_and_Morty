@@ -1,6 +1,8 @@
 <div class="container">
   <div class="row">
     <div class="col">
+      <input #searchInput type="text" class="form-control" (input)="searchEpisodes(searchInput.value)" placeholder="Buscar episodios">
+      
       <div class="accordion" id="episodeAccordion">
 
         <!-- Loop through episodes and create accordion items -->
@@ -23,6 +25,7 @@
         </div>
 
       </div>
+      
     </div>
   </div>
 </div>

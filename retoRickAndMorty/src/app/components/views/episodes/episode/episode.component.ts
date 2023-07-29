@@ -60,8 +60,19 @@ export class EpisodeComponent {
           this.scroll = false;
           console.error('Error in the request:', error);
         }
-      }
-      );
+      });
+  }
+
+
+  searchEpisodes(searchText: string) {
+    this.episodes= this.episodes.filter((episode) => episode.name.toLowerCase().includes(searchText.toLowerCase()));
+    if (searchText == "") {
+      this.episodes = []
+      this.fetchData()
+    }
+
+    searchText = ""
+    
   }
 
 }
