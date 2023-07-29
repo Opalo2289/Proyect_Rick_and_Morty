@@ -70,9 +70,6 @@ export class EpisodeComponent {
       this.episodes = []
       this.fetchData()
     }
-
-    searchText = ""
-    
   }
 
 }
