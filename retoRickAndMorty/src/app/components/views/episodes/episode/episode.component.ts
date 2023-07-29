@@ -9,45 +9,60 @@ import { DOCUMENT } from '@angular/common';
   templateUrl: './episode.component.html',
   styleUrls: ['./episode.component.css']
 })
+
 export class EpisodeComponent {
 
   public episodes: Episode[] = [];
   public document: any;
   public currentPage = 1;
-  
+  public filters: Filter = {
+    name: '',
+    status: ''
+  };
+  public scroll: boolean = true
 
   constructor(private apiEpisodeService: ApiEpisodeService ) { }
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll(): void {
-    console.log('hey')
+    // console.log('hey')
     const { innerHeight } = window;
     
     const { scrollHeight, scrollTop } = document.documentElement;
-    console.log()
 
-    if (innerHeight + scrollTop >= scrollHeight) {
+    if (innerHeight + scrollTop >= scrollHeight && this.scroll) {
+      console.log("Entró", this.scroll)
       // El usuario ha llegado al final de la página, cargar más episodios
       this.loadEpisodes();
     }
   }
 
   ngOnInit() {
-    this.loadEpisodes();
+    this.fetchData();
   }
 
   loadEpisodes() {
-    const pages = 1
-    const name = ""
-    const prev = ""
-    this.apiEpisodeService.getData(prev, name, pages, this.currentPage)
-      .subscribe((response) => {
-        console.log(pages)
-        // The API response contains the episodes in the "results" property
-        this.episodes.push(...response.results);
-        this.currentPage++;
-        console.log(this.episodes)
-      });
+    this.currentPage++;
+    this.fetchData();
+  }
+
+  fetchData(){
+    this.apiEpisodeService.getData(this.currentPage, this.filters)
+    .subscribe({
+      next: (response) => {
+          console.log(this.currentPage)
+          // The API response contains the episodes in the "results" property
+          this.episodes.push(...response.results);
+          
+          console.log(this.episodes)
+        },
+      error: (error: any)=> {
+          // Here you can handle the error, such as showing an error message in the interface
+          this.scroll = false;
+          console.error('Error in the request:', error);
+        }
+      }
+      );
   }
 
 }
