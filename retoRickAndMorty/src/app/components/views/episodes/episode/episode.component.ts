@@ -2,7 +2,7 @@ import { Component, HostListener, inject } from '@angular/core';
 import { Episode } from 'src/app/interfaces/basedata.interface';
 import { ApiEpisodeService } from 'src/app/services/api-episode.service';
 import { Filter } from 'src/app/interfaces/filters.interface';
-import { DOCUMENT } from '@angular/common';
+
 
 @Component({
   selector: 'app-episode',
@@ -23,15 +23,14 @@ export class EpisodeComponent {
 
   constructor(private apiEpisodeService: ApiEpisodeService ) { }
 
-  @HostListener('window:scroll', ['$event'])
+  @HostListener('window:scroll')
   onWindowScroll(): void {
-    // console.log('hey')
+    
     const { innerHeight } = window;
     
     const { scrollHeight, scrollTop } = document.documentElement;
 
     if (innerHeight + scrollTop >= scrollHeight && this.scroll) {
-      console.log("Entró", this.scroll)
       // El usuario ha llegado al final de la página, cargar más episodios
       this.loadEpisodes();
     }
