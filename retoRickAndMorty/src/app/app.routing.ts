@@ -16,7 +16,7 @@ const appRoute: Routes = [
         { path: 'location',component: LocationComponent },
     ]},
 
-    { path: 'detalle',component: SingleCharacterComponent },
+    { path: 'detalle/:id',component: SingleCharacterComponent },
 
    
 ];

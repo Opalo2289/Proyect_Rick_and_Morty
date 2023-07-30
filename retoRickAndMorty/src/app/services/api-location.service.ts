@@ -15,6 +15,9 @@ import { ApiService } from './api.service';
 export class ApiLocationService implements ApiService<Location>{
 
   constructor(private http: HttpClient) { }
+  getId(id: number): Observable<Location> {
+    throw new Error('Method not implemented.');
+  }
     getData(page: number, filters: Filter): Observable<ApiResponse<Location>> {
 
       let params = new HttpParams();

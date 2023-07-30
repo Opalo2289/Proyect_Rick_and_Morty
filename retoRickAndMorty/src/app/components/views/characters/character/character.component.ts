@@ -29,7 +29,14 @@ export class CharacterComponent {
   public filterSize: number[] = [5, 10, 15, 20];
   public selectedPageSize: number = 20;
 
-  constructor(private _serviceChacarter: ApiServiceCharacter, private _router: Router) {}
+  public _id: any
+  
+
+
+  constructor(private _serviceChacarter: ApiServiceCharacter, private _router: Router) {
+   this._id = this._serviceChacarter.getId(this._id)
+    // console.log(this._id)
+  }
 
   ngOnInit(): void {
     this.completeData()
@@ -61,11 +68,11 @@ export class CharacterComponent {
 
   completeData(page?: number): void {
     this.page = page || 1;
-    this.fetchData(this.page);
+    this.fetchData();
   }
 
-  fetchData(page: number): void {
-    this._serviceChacarter.getData(page, this.filters).subscribe({
+  fetchData(): void {
+    this._serviceChacarter.getData(this.page, this.filters).subscribe({
       next: (response: ApiResponse<Character>) => {
         const { info, results } = response;
         this.count = info.count;
@@ -108,8 +115,10 @@ export class CharacterComponent {
   }
 
   irAlDetalle() {
-    this._router.navigateByUrl('/detalle')
+    this._router.navigateByUrl('/home/detalle/')
   }
 
 
 }
+
+
