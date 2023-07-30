@@ -19,11 +19,9 @@ ul {
 }
 
 li .nav-link {
-    color: rgb(255, 249, 165);
+    color: rgb(0, 0, 0);
     font-size: 20px;
     font-family: Abril Fatface, 'Courier New', Courier, monospace;
-
-    
 }
 
 .navbar-collapse {
