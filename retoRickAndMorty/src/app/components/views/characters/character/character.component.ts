@@ -29,13 +29,8 @@ export class CharacterComponent {
   public filterSize: number[] = [5, 10, 15, 20];
   public selectedPageSize: number = 20;
 
-  public _id: any
-  
-
-
   constructor(private _serviceChacarter: ApiServiceCharacter, private _router: Router) {
-   this._id = this._serviceChacarter.getId(this._id)
-    // console.log(this._id)
+
   }
 
   ngOnInit(): void {
@@ -95,7 +90,7 @@ export class CharacterComponent {
     });
   }
 
-  private completeDataDelayed() {
+   private completeDataDelayed() {
     const delayTimeMs = 3000;
     setTimeout(() => {
       this.load_data = false;
@@ -114,8 +109,9 @@ export class CharacterComponent {
     this.completeData(); // Vuelve a cargar los datos con el nuevo tamaño de página seleccionado
   }
 
-  irAlDetalle() {
-    this._router.navigateByUrl('/home/detalle/')
+  irAlDetalle(id: number) {
+    const rutaDetalle = `/home/character/${id}`
+    this._router.navigateByUrl(rutaDetalle)
   }
 
 

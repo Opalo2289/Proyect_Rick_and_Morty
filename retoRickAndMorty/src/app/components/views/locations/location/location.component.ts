@@ -7,6 +7,8 @@ import { Filter } from 'src/app/interfaces/filters.interface';
 import { DOCUMENT } from '@angular/common';
 import { ApiLocationService } from 'src/app/services/api-location.service';
 
+declare var iziToast: any
+
 @Component({
   selector: 'app-location',
   templateUrl: './location.component.html',
@@ -62,7 +64,15 @@ export class LocationComponent {
         error: (error: any)=> {
             // Here you can handle the error, such as showing an error message in the interface
             this.scroll = false;
-            console.error('Error in the request:', error);
+            iziToast.show({
+              title: 'FIN',
+              titleColor: '#812',
+              color: 'red',
+              class: 'test-danger',
+              position: 'topRight',
+              message: 'NO HAY MAS LUGARES',
+              messageSize: 'large',
+            });
           }
         }
         );

@@ -1,21 +1,41 @@
 <div class="alert alert-primary font" role="alert">
     &#9733; DETALLE DE PERSONAJE &#9733;
-  </div>
+</div>
 <app-header></app-header><br><br>
 <!-- Horizontal card layout -->
 <div class="container">
     <div class="row justify-content-center">
-      <div class="col-12">
-        <div class="card card-horizontal">
-          <div class="card-img-top"></div>
-          <img src="" alt="">
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text fs-sm">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-            <a href="#" class="btn btn-sm btn-primary">Go somewhere</a>
-          </div>
+        <div class="col-12">
+            <div *ngIf="character">
+                <div class="card card-horizontal">
+                    <ng-container *ngIf="load_data">
+                        <div>
+                            <div class="spinner-grow" style="width: 3rem; height: 3rem;" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                        </div>
+                    </ng-container>
+                    <ng-container *ngIf="!load_data">
+                        <div class="card-img-top">
+                            <img src="{{character.image}}" alt="{{character.name}}">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">{{character.name}}</h5>
+                            <p class="card-text fs-sm">Status: {{character.status}}</p>
+                            <p class="card-text fs-sm">Species: {{character.species}}</p>
+                            <p class="card-text fs-sm">Type: {{character.type || 'N/A'}}</p>
+                            <p class="card-text fs-sm">Gender: {{character.gender}}</p>
+                            <p class="card-text fs-sm">Origin: {{character.origin.name || 'N/A'}}</p>
+                            <p class="card-text fs-sm">Location: {{character.location.name || 'N/A'}}</p>
+                            <p class="card-text fs-sm">This is a wider card with supporting text below as a natural
+                                lead-in to additional content. This content is a little bit longer.</p>
+                            <a [routerLink]="['/home/character']" class="btn btn-sm btn-primary">Ir a personajes</a>
+                        </div> <br>
+                    </ng-container>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
-  </div><br><br><br><br>  
+</div>
+<br><br><br><br>
 <app-footer></app-footer>

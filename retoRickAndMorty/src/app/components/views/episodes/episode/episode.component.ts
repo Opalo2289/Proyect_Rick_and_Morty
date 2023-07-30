@@ -4,6 +4,7 @@ import { ApiEpisodeService } from 'src/app/services/api-episode.service';
 import { Filter } from 'src/app/interfaces/filters.interface';
 import { ApiResponse } from 'src/app/interfaces/apiResponse.interface';
 import { ApiError } from 'src/app/interfaces/api.error.interface';
+declare var iziToast: any
 
 
 @Component({
@@ -15,6 +16,7 @@ import { ApiError } from 'src/app/interfaces/api.error.interface';
 export class EpisodeComponent {
 
   public episodes: Episode[] = [];
+  public prevEpisodes: Episode[] = [];
   public document: any;
   public currentPage = 1;
   public filters: Filter = {
@@ -45,7 +47,7 @@ export class EpisodeComponent {
   }
 
   getEpisode(){
-    this.apiEpisodeService.getId(1).subscribe({
+    this.apiEpisodeService.getId("1").subscribe({
       next: (response) => {
           console.log("response", response)
         },
@@ -68,6 +70,7 @@ export class EpisodeComponent {
           console.log(this.currentPage)
           // The API response contains the episodes in the "results" property
           this.episodes.push(...response.results);
+          this.prevEpisodes = this.episodes;
           console.log(this.episodes)
         },
       error: (error: ApiError)=> {
@@ -79,11 +82,26 @@ export class EpisodeComponent {
           console.error('Mensaje de estado:', error.statusText);
 
           if (error.status == 404){
-              alert("No hay más elementos")
+            iziToast.show({
+              title: 'FIN',
+              titleColor: '#812',
+              color: 'red',
+              class: 'test-danger',
+              position: 'topRight',
+              message: 'NO HAY MAS EPISODIOS',
+              messageSize: 'large',
+            });
           }
         }
       }
       );
+  }
+
+
+  searchEpisodes(searchText: string) {
+    this.episodes = this.prevEpisodes.filter(
+      (episode) => episode.name.toLowerCase().includes(searchText.toLowerCase())
+    );
   }
 
 }

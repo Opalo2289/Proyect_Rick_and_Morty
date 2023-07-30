@@ -14,12 +14,16 @@ const appRoute: Routes = [
         { path: 'character',component: CharacterComponent },
         { path: 'episodes',component: EpisodeComponent },
         { path: 'location',component: LocationComponent },
+        { path: 'character/:id',component: SingleCharacterComponent },
     ]},
 
-    { path: 'detalle/:id',component: SingleCharacterComponent },
+   
 
    
 ];
+
+
+
 
 export const appRoutingProviders: any[] = [];
 export const routing: ModuleWithProviders<any> = RouterModule.forRoot(appRoute)

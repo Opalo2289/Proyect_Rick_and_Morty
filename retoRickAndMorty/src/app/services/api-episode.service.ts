@@ -17,7 +17,7 @@ export class ApiEpisodeService implements ApiService<Episode>{
 
   constructor(private http: HttpClient) { }
 
-  getId(id: number): Observable<Episode> {
+  getId(id: string): Observable<Episode> {
     const url = `${BASE_EPISODE_API_URL}/${id}`;
 
     return this.http.get<Episode>(url).pipe(

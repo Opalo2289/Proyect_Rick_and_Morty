@@ -4,8 +4,12 @@
 <app-header></app-header>
 
   <div class="row">
-    <div class="col">
-     
+    <div class="col"><br><br><br>
+      <div class="row">
+        <div class="col">
+          <input #searchInput type="text" class="form-control" (input)="searchEpisodes(searchInput.value)" placeholder="Buscar episodios"><br>
+        </div>
+      </div>
       <div class="accordion" id="episodeAccordion">
         <div *ngFor="let episode of episodes" class="accordion-item">
           <h2 class="accordion-header" id="heading{{ episode.id }}">
