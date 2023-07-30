@@ -21,9 +21,7 @@
           <div id="collapse{{ episode.id }}" class="accordion-collapse collapse"
             [attr.aria-labelledby]="'heading' + episode.id" [attr.data-bs-parent]="'#episodeAccordion'">
             <div class="accordion-body">
-              <p>Air Date: {{ episode.air_date }}</p>
-              <p>Episode: {{ episode.episode }}</p>
-              <p>#: {{ episode.id }}</p>
+              <button type="button" class="btn btn-link" (click)="irAlDetalle(episode.id)"><h5>Ver mas</h5></button>
               <!-- You can add more details here if needed -->
             </div>
           </div>

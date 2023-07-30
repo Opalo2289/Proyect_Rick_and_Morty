@@ -2,10 +2,9 @@ import { Component } from '@angular/core';
 
 import { HostListener, inject } from '@angular/core';
 import { Location } from 'src/app/interfaces/basedata.interface';
-import { ApiEpisodeService } from 'src/app/services/api-episode.service';
 import { Filter } from 'src/app/interfaces/filters.interface';
-import { DOCUMENT } from '@angular/common';
 import { ApiLocationService } from 'src/app/services/api-location.service';
+import { Router } from '@angular/router';
 
 declare var iziToast: any
 
@@ -26,7 +25,7 @@ export class LocationComponent {
     };
     public scroll: boolean = true
   
-    constructor(private _locationService: ApiLocationService) { }
+    constructor(private _locationService: ApiLocationService, private _router: Router) { }
   
     @HostListener('window:scroll', ['$event'])
     onWindowScroll(): void {
@@ -77,6 +76,13 @@ export class LocationComponent {
         }
         );
     }
+
+
+    irAlDetalle(id: number) {
+      const rutaDetalle = `/home/locations/${id}`
+      this._router.navigateByUrl(rutaDetalle)
+    }
+  
   
   }
 

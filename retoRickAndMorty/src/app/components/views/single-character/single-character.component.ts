@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { NavigationHelper } from 'src/app/helpers/navigate.helper';
 import { Character } from 'src/app/interfaces/basedata.interface';
 import { ApiCharacterService } from 'src/app/services/api-character.service';
 
@@ -13,9 +14,12 @@ import { ApiCharacterService } from 'src/app/services/api-character.service';
 export class SingleCharacterComponent {
   public characterId: string = ''; // Aquí almacenaremos el ID del personaje
   public character: Character | undefined;
-  public load_data = true;
   
-  constructor(private _serviceCharacter: ApiCharacterService, private route: ActivatedRoute) {}
+  constructor(
+    private _serviceCharacter: ApiCharacterService,
+    private route: ActivatedRoute,
+    private navigationHelper: NavigationHelper
+  ) {}
 
   ngOnInit(): void {
     // Usamos el servicio ActivatedRoute para obtener el valor del parámetro :id
@@ -28,18 +32,10 @@ export class SingleCharacterComponent {
     this.getCharacter()
   }
 
-  private completeDataDelayed() {
-    const delayTimeMs = 3000;
-    setTimeout(() => {
-      this.load_data = false;
-    }, delayTimeMs);
-  }
-
   getCharacter(){
     this._serviceCharacter.getId(this.characterId).subscribe({
       next: (response: Character) => {
           this.character = response;
-          this.completeDataDelayed()
           console.log("response", this.character)
           console.log("response", this.character.name)
         },
@@ -49,5 +45,28 @@ export class SingleCharacterComponent {
       });
   }
 
- 
+  // getEpisodeId(episodeUrl: string): string {
+  //   const parts = episodeUrl.split('/');
+  //   return parts[parts.length - 1];
+  // }
+
+  // navigateToEpisode(episodeUrl: string) {
+
+  //   this._router.navigate(['home/episodes/', this.getEpisodeId(episodeUrl)]);
+  // }
+
+
+  getItemId(url: string): string {
+    const parts = url.split('/');
+    return parts[parts.length - 1];
+  }
+
+  navigateToEpisode(episodeUrl: string) {
+    this.navigationHelper.navigateToEpisode(episodeUrl);
+  }
+
+  navigateToLocation(locationUrl: string) {
+    this.navigationHelper.navigateToLocation(locationUrl);
+  }
+
 }

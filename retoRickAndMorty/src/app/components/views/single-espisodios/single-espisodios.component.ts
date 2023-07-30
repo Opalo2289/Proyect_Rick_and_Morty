@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { NavigationHelper } from 'src/app/helpers/navigate.helper';
 import { Episode } from 'src/app/interfaces/basedata.interface';
 import { ApiEpisodeService } from 'src/app/services/api-episode.service';
 
@@ -16,7 +17,11 @@ export class SingleEpisodeComponent {
   public episodeId: string = ''; // Aquí almacenaremos el ID del personaje
   public episode: Episode | undefined;
   
-  constructor(private _serviceEpisode: ApiEpisodeService, private route: ActivatedRoute) {}
+  constructor(
+    private _serviceEpisode: ApiEpisodeService,
+    private route: ActivatedRoute,
+    private navigationHelper: NavigationHelper
+  ) {}
 
   ngOnInit(): void {
     // Usamos el servicio ActivatedRoute para obtener el valor del parámetro :id
@@ -41,4 +46,14 @@ export class SingleEpisodeComponent {
         }
       });
   }
+
+  getItemId(characterUrl: string): string {
+    return this.navigationHelper.getItemId(characterUrl);
+  }
+
+  navigateToCharacter(characterUrl: string) {
+
+    this.navigationHelper.navigateToCharacter(characterUrl);
+  }
+
 }

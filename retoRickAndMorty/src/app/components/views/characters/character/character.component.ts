@@ -110,7 +110,7 @@ export class CharacterComponent {
   }
 
   irAlDetalle(id: number) {
-    const rutaDetalle = `/home/character/${id}`
+    const rutaDetalle = `/home/characters/${id}`
     this._router.navigateByUrl(rutaDetalle)
   }
 

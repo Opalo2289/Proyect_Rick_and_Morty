@@ -15,8 +15,16 @@ import { ApiService } from './api.service';
 export class ApiLocationService implements ApiService<Location>{
 
   constructor(private http: HttpClient) { }
+  
   getId(id: string): Observable<Location> {
-    throw new Error('Method not implemented.');
+    const url = `${BASE_LOCATION_API_URL}/${id}`;
+
+    return this.http.get<Location>(url).pipe(
+      catchError((error) => {
+        // Aquí puedes manejar el error como prefieras, como mostrar un mensaje de error
+        console.error('Error en la solicitud HTTP:', error);
+        return throwError(() => new Error('Error en la solicitud HTTP'));
+      }))
   }
     getData(page: number, filters: Filter): Observable<ApiResponse<Location>> {
 

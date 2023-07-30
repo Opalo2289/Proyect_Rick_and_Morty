@@ -4,6 +4,7 @@ import { Filter } from 'src/app/interfaces/filters.interface';
 import { ApiResponse } from 'src/app/interfaces/apiResponse.interface';
 import { ApiError } from 'src/app/interfaces/api.error.interface';
 import { ApiEpisodeService } from 'src/app/services/api-episode.service';
+import { Router } from '@angular/router';
 declare var iziToast: any
 
 
@@ -25,7 +26,7 @@ export class EpisodeComponent {
   };
   public scroll: boolean = true
 
-  constructor(private apiEpisodeService: ApiEpisodeService ) { }
+  constructor(private apiEpisodeService: ApiEpisodeService, private _router: Router ) { }
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll(): void {
@@ -102,6 +103,11 @@ export class EpisodeComponent {
     this.episodes = this.prevEpisodes.filter(
       (episode) => episode.name.toLowerCase().includes(searchText.toLowerCase())
     );
+  }
+
+  irAlDetalle(id: number) {
+    const rutaDetalle = `/home/episodes/${id}`
+    this._router.navigateByUrl(rutaDetalle)
   }
 
 }

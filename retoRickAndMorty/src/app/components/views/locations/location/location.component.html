@@ -14,16 +14,13 @@
             <h2 class="accordion-header" id="heading{{ loc.id }}">
               <button class="accordion-button" type="button" data-bs-toggle="collapse"
                 [attr.data-bs-target]="'#collapse' + loc.id" [attr.aria-controls]="'collapse' + loc.id">
-                <h2>{{ loc.name }}</h2>
+                <h5>{{ loc.name }}</h5>
               </button>
             </h2>
             <div id="collapse{{loc.id }}" class="accordion-collapse collapse"
               [attr.aria-labelledby]="'heading' +loc.id" [attr.data-bs-parent]="'#locationAccordion'">
               <div class="accordion-body">
-                <p>Dimension: {{loc.dimension}}</p>
-                <p>Type: {{loc.type }}</p>
-                <p>#: {{loc.id }}</p>
-                <!-- You can add more details here if needed -->
+                <button type="button" class="btn btn-link" (click)="irAlDetalle(loc.id)"><h5>Ver mas</h5></button>
               </div>
             </div>
           </div>
