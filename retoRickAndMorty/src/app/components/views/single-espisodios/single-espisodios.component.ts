@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { NavigationHelper } from 'src/app/helpers/navigate.helper';
 import { Episode } from 'src/app/interfaces/basedata.interface';
 import { ApiEpisodeService } from 'src/app/services/api-episode.service';
-
+declare var iziToast: any
 
 @Component({
   selector: 'app-single-espisodios',
@@ -42,7 +42,15 @@ export class SingleEpisodeComponent {
           console.log("response", this.episode.name)
         },
       error: (error: any)=> {
-
+        iziToast.show({
+          title: 'ERROR',
+          titleColor: '#812',
+          color: 'red',
+          class: 'test-danger',
+          position: 'topRight',
+          message: 'NO SE ENCONTRARON COINCIDENCIAS',
+          messageSize: 'large',
+        });
         }
       });
   }

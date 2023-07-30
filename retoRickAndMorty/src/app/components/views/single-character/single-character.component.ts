@@ -3,6 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { NavigationHelper } from 'src/app/helpers/navigate.helper';
 import { Character } from 'src/app/interfaces/basedata.interface';
 import { ApiCharacterService } from 'src/app/services/api-character.service';
+declare var iziToast: any
 
 @Component({
   selector: 'app-single-character',
@@ -40,7 +41,15 @@ export class SingleCharacterComponent {
           console.log("response", this.character.name)
         },
       error: (error: any)=> {
-
+        iziToast.show({
+          title: 'ERROR',
+          titleColor: '#812',
+          color: 'red',
+          class: 'test-danger',
+          position: 'topRight',
+          message: 'NO SE ENCONTRARON COINCIDENCIAS',
+          messageSize: 'large',
+        });
         }
       });
   }

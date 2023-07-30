@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { NavigationHelper } from 'src/app/helpers/navigate.helper';
 import { Location } from 'src/app/interfaces/basedata.interface';
 import { ApiLocationService } from 'src/app/services/api-location.service';
+declare var iziToast: any
 
 @Component({
   selector: 'app-single-location',
@@ -39,7 +40,15 @@ export class SingleLocationComponent {
           console.log("response", this.location.name)
         },
       error: (error: any)=> {
-
+        iziToast.show({
+          title: 'ERROR',
+          titleColor: '#812',
+          color: 'red',
+          class: 'test-danger',
+          position: 'topRight',
+          message: 'NO SE ENCONTRARON COINCIDENCIAS',
+          messageSize: 'large',
+        });
         }
       });
   }
