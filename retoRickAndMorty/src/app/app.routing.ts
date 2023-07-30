@@ -12,9 +12,14 @@ const appRoute: Routes = [
     { path: 'home',component: HomePageComponent },
     {path: 'home', children: [
         { path: 'character',component: CharacterComponent },
-        { path: 'episodes',component: EpisodeComponent },
-        { path: 'location',component: LocationComponent },
         { path: 'character/:id',component: SingleCharacterComponent },
+
+        { path: 'episodes',component: EpisodeComponent },
+        { path: 'episodes/:id',component: SingleCharacterComponent },
+
+        { path: 'location',component: LocationComponent },
+        { path: 'location/:id',component: SingleCharacterComponent },
+       
     ]},
 
    

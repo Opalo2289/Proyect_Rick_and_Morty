@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Character } from 'src/app/interfaces/basedata.interface';
-import { ApiServiceCharacter } from 'src/app/services/api-character.service';
+import { ApiCharacterService } from 'src/app/services/api-character.service';
 
 @Component({
   selector: 'app-single-character',
@@ -15,7 +15,7 @@ export class SingleCharacterComponent {
   public character: Character | undefined;
   public load_data = true;
   
-  constructor(private _serviceCharacter: ApiServiceCharacter, private route: ActivatedRoute) {}
+  constructor(private _serviceCharacter: ApiCharacterService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
     // Usamos el servicio ActivatedRoute para obtener el valor del parámetro :id

@@ -20,7 +20,9 @@ import { LocationComponent } from './components/views/locations/location/locatio
 import { EpisodeComponent } from './components/views/episodes/episode/episode.component';
 import { HomePageComponent } from './components/views/home-page/home-page.component';
 import { HeaderComponent } from './components/headers/header/header.component';
-import { SingleCharacterComponent } from './components/views/single-character/single-character.component'; 
+import { SingleCharacterComponent } from './components/views/single-character/single-character.component';
+import { SingleEpisodeComponent } from './components/views/single-espisodios/single-espisodios.component';
+import { SingleLocationComponent } from './components/views/single-location/single-location.component'; 
 
 
 @NgModule({
@@ -35,6 +37,8 @@ import { SingleCharacterComponent } from './components/views/single-character/si
     HomePageComponent,
     HeaderComponent,
     SingleCharacterComponent,
+    SingleEpisodeComponent,
+    SingleLocationComponent,
   ],
   imports: [
     BrowserModule,

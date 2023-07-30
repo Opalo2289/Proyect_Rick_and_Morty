@@ -11,7 +11,7 @@ import { BASE_CHARACTER_API_URL } from '../constants/constants';
   providedIn: 'root'
 })
 
-export class ApiServiceCharacter implements ApiService<Character> {
+export class ApiCharacterService implements ApiService<Character> {
 
   constructor(private http: HttpClient) {}
 

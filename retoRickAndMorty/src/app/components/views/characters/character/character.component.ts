@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { ApiResponse } from 'src/app/interfaces/apiResponse.interface';
 import { Character } from 'src/app/interfaces/basedata.interface';
 import { Filter } from 'src/app/interfaces/filters.interface';
-import { ApiServiceCharacter } from 'src/app/services/api-character.service';
+import { ApiCharacterService } from 'src/app/services/api-character.service';
 
 declare var iziToast: any
 
@@ -29,7 +29,7 @@ export class CharacterComponent {
   public filterSize: number[] = [5, 10, 15, 20];
   public selectedPageSize: number = 20;
 
-  constructor(private _serviceChacarter: ApiServiceCharacter, private _router: Router) {
+  constructor(private _serviceChacarter: ApiCharacterService, private _router: Router) {
 
   }
 
