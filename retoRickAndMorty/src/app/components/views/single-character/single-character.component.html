@@ -31,7 +31,7 @@
           <h5>Lista de episodios dónde aparece el personaje</h5>
           <ul class="list-group mt-3" *ngIf="character?.episode">
             <li class="list-group-item" *ngFor="let episodeUrl of character.episode">
-              <button (click)="navigateToEpisode(episodeUrl)"> # Episode {{getItemId(episodeUrl)}}</button>
+              <button type="button" class="btn btn-secondary" (click)="navigateToEpisode(episodeUrl)"> # Episode {{getItemId(episodeUrl)}}</button>
             </li>
           </ul>
         </div>

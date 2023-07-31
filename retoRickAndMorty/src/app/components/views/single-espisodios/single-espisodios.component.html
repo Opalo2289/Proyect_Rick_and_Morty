@@ -24,7 +24,7 @@
           <h5>Lista de personajes que aparecen en el episodio</h5>
           <ul class="list-group mt-3" *ngIf="episode?.characters">
             <li class="list-group-item" *ngFor="let characterUrl of episode.characters">
-              <button (click)="navigateToCharacter(characterUrl)"> # Personaje {{getItemId(characterUrl)}}</button>
+              <button type="button" class="btn btn-secondary" (click)="navigateToCharacter(characterUrl)"> # Personaje {{getItemId(characterUrl)}}</button>
             </li>
           </ul>
         </div>
